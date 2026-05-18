@@ -590,6 +590,24 @@ footer {
 
   .hero {
     min-height: 75vh;
+    padding-top: 2rem;
+  }
+
+  .hero-layout {
+    gap: 2rem;
+  }
+
+  .hero-image {
+    width: 74%;
+    max-width: 320px;
+    height: 420px;
+    margin: 0 auto;
+    border-radius: 180px;
+  }
+
+  .hero-image-glow {
+    width: 260px;
+    height: 260px;
   }
 
   .service-grid {
