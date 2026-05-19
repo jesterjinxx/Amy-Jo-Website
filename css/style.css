@@ -188,15 +188,115 @@ body {
   position: absolute;
   inset: 0;
 
-  background-image:
-    radial-gradient(circle at 18% 28%, transparent 0 80px, rgba(201, 164, 93, 0.13) 82px 86px, transparent 88px),
-    radial-gradient(circle at 78% 35%, transparent 0 120px, rgba(201, 164, 93, 0.11) 122px 126px, transparent 128px),
-    radial-gradient(circle at 58% 82%, transparent 0 95px, rgba(201, 164, 93, 0.1) 97px 101px, transparent 103px),
-    radial-gradient(circle at 32% 76%, transparent 0 160px, rgba(201, 164, 93, 0.08) 162px 166px, transparent 168px);
+  opacity: 0.42;
 
-  opacity: 1;
+  background-image:
+
+    /* left constellation circles */
+    radial-gradient(
+      circle at 22% 42%,
+      transparent 0 110px,
+      rgba(226,201,138,0.08) 112px 114px,
+      transparent 116px
+    ),
+
+    radial-gradient(
+      circle at 22% 42%,
+      transparent 0 180px,
+      rgba(226,201,138,0.045) 182px 184px,
+      transparent 186px
+    ),
+
+    /* right constellation circles */
+    radial-gradient(
+      circle at 78% 34%,
+      transparent 0 130px,
+      rgba(226,201,138,0.07) 132px 134px,
+      transparent 136px
+    ),
+
+    radial-gradient(
+      circle at 78% 34%,
+      transparent 0 220px,
+      rgba(226,201,138,0.04) 222px 224px,
+      transparent 226px
+    ),
+
+    /* Scorpio stars */
+    radial-gradient(circle at 18% 42%, rgba(226,201,138,0.95) 0 2px, transparent 3px),
+    radial-gradient(circle at 23% 48%, rgba(226,201,138,0.75) 0 2px, transparent 3px),
+    radial-gradient(circle at 28% 44%, rgba(226,201,138,0.9) 0 2px, transparent 3px),
+    radial-gradient(circle at 33% 53%, rgba(226,201,138,0.8) 0 2px, transparent 3px),
+    radial-gradient(circle at 38% 49%, rgba(226,201,138,0.85) 0 2px, transparent 3px),
+
+    /* Aquarius stars */
+    radial-gradient(circle at 72% 30%, rgba(226,201,138,0.9) 0 2px, transparent 3px),
+    radial-gradient(circle at 77% 36%, rgba(226,201,138,0.75) 0 2px, transparent 3px),
+    radial-gradient(circle at 82% 32%, rgba(226,201,138,0.95) 0 2px, transparent 3px),
+    radial-gradient(circle at 87% 40%, rgba(226,201,138,0.8) 0 2px, transparent 3px),
+    radial-gradient(circle at 92% 35%, rgba(226,201,138,0.7) 0 2px, transparent 3px);
+
+  pointer-events: none;
+}
+.hero::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      24deg,
+      transparent 49.4%,
+      rgba(226,201,138,0.12) 49.8%,
+      rgba(226,201,138,0.12) 50.2%,
+      transparent 50.6%
+    );
+
+  opacity: 0.18;
+
+  transform: scale(1.4);
+
+  pointer-events: none;
+}
+/* drifting star layer */
+.hero .stars {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  background-image:
+    radial-gradient(circle at 6% 18%, rgba(226,201,138,0.55) 0 1px, transparent 2px),
+    radial-gradient(circle at 10% 42%, rgba(226,201,138,0.8) 0 1px, transparent 2px),
+    radial-gradient(circle at 14% 70%, rgba(226,201,138,0.45) 0 1px, transparent 2px),
+    radial-gradient(circle at 20% 26%, rgba(226,201,138,0.7) 0 1px, transparent 2px),
+    radial-gradient(circle at 26% 58%, rgba(226,201,138,0.5) 0 1px, transparent 2px),
+    radial-gradient(circle at 34% 16%, rgba(226,201,138,0.65) 0 1px, transparent 2px),
+    radial-gradient(circle at 40% 78%, rgba(226,201,138,0.5) 0 1px, transparent 2px),
+
+    radial-gradient(circle at 60% 18%, rgba(226,201,138,0.5) 0 1px, transparent 2px),
+    radial-gradient(circle at 66% 70%, rgba(226,201,138,0.45) 0 1px, transparent 2px),
+    radial-gradient(circle at 72% 26%, rgba(226,201,138,0.75) 0 1px, transparent 2px),
+    radial-gradient(circle at 78% 56%, rgba(226,201,138,0.55) 0 1px, transparent 2px),
+    radial-gradient(circle at 84% 16%, rgba(226,201,138,0.7) 0 1px, transparent 2px),
+    radial-gradient(circle at 90% 44%, rgba(226,201,138,0.6) 0 1px, transparent 2px),
+    radial-gradient(circle at 96% 74%, rgba(226,201,138,0.45) 0 1px, transparent 2px);
+
+  animation: driftStars 12s ease-in-out infinite alternate;
 }
 
+@keyframes driftStars {
+  from {
+    transform: translate(0, 0);
+    opacity: 0.45;
+  }
+
+  to {
+    transform: translate(-90px, 55px);
+    opacity: 0.85;
+  }
+}
 /* ================================
    HERO IMAGE
 ================================ */
@@ -211,7 +311,6 @@ body {
 
 .hero-image-glow {
   position: absolute;
-
   width: 420px;
   height: 420px;
 
