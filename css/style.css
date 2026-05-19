@@ -181,10 +181,9 @@ body {
 
   padding: 4rem 0;
 }
-
 .hero::before {
   content: "";
-
+  z-index: 0;
   position: absolute;
   inset: 0;
 
@@ -240,7 +239,7 @@ body {
 }
 .hero::after {
   content: "";
-
+  z-index: 0;
   position: absolute;
   inset: 0;
 
@@ -311,6 +310,7 @@ body {
 
 .hero-image-glow {
   position: absolute;
+
   width: 420px;
   height: 420px;
 
@@ -674,6 +674,7 @@ footer {
 
   .hero-layout {
     grid-template-columns: 1fr;
+    z-index: 3;
   }
 
   .hero-image {
@@ -686,6 +687,7 @@ footer {
 
   .hero-image-wrapper {
     order: 1;
+    z-index: 4
   }
 }
 
@@ -717,6 +719,7 @@ footer {
   }
 
   .hero-image {
+    z-index: 5;
     width: 74%;
     max-width: 320px;
     height: 420px;
@@ -727,6 +730,7 @@ footer {
   .hero-image-glow {
     width: 260px;
     height: 260px;
+    z-index: 5;
   }
 
   .service-grid {
